@@ -2,6 +2,8 @@
 
 import { Metadata } from 'next';
 
+import Button from '@/components/UI/Button';
+
 import mainTitle from '@/constants/mainTitle';
 
 import styles from './not-found.module.scss';
@@ -25,9 +27,9 @@ const GlobalError = (
         Something went wrong
       </h1>
 
-      <button onClick={() => reset()} className={styles['not-found__link']}>
+      <Button onClick={() => reset()} className={styles['not-found__link']}>
         Try Again
-      </button>
+      </Button>
     </div>
   );
 };

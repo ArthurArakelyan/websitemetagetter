@@ -1,0 +1,24 @@
+.website-input {
+  margin-top: 1.5rem;
+  max-width: 30rem;
+  width: 100%;
+  column-gap: 0.5rem;
+  @include flex(row, stretch, center);
+}
+
+.website-input__button {
+  padding: 0 1.1rem;
+  border-radius: 0.5rem;
+}
+
+.website-input__button-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: $white;
+}
+
+@media (max-width: 500px) {
+  .website-input {
+    margin-top: 1rem;
+  }
+}

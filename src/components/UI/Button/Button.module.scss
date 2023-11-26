@@ -1,0 +1,78 @@
+.button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  background-color: $primary-color;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.031rem;
+  @include flex(row, center, center);
+  transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+
+  &--loading {
+    .button__content {
+      opacity: 0;
+    }
+  }
+
+  &:not(&--loading):disabled {
+    .button__content {
+      opacity: 0.6;
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: $primary-color-600;
+  }
+
+  &:not(&:disabled) {
+    @include hover() {
+      box-shadow: 0 0 0.313rem var(--shadow-md-color);
+      background-color: $primary-color-hover;
+    }
+
+    @include active() {
+      box-shadow: 0 0 0.313rem var(--shadow-lg-color);
+    }
+
+    @include touchActive() {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.button__content {
+  opacity: 1;
+  user-select: none;
+  @include flex(row, center, center);
+  transition: opacity .2s ease;
+}
+
+.button__loader {
+  position: absolute;
+  color: $white !important;
+}
+
+.ripple {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple 0.7s ease;
+}
+
+@keyframes ripple {
+  to{
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}

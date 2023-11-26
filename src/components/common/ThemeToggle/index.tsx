@@ -37,9 +37,9 @@ const ThemeToggle = () => {
     if (!themeChanged) {
       const newTheme = matches ? 'dark' : 'light';
 
-      setCookie(themeStorageKey, newTheme);
-
       if (theme !== newTheme) {
+        setCookie(themeStorageKey, newTheme);
+
         router.refresh();
       }
     }
@@ -55,7 +55,7 @@ const ThemeToggle = () => {
     return () => {
       colorSchemeMedia.removeEventListener('change', handleChangeColorScheme);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <button
