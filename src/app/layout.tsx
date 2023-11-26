@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 
 import Header from '@/components/common/Header';
 import Main from '@/components/common/Main';
+import Footer from '@/components/common/Footer';
 
 import mainTitle from '@/constants/mainTitle';
 
@@ -44,7 +45,7 @@ const RootLayout = ({
           {children}
         </Main>
 
-        <footer>Footer</footer>
+        <Footer />
       </body>
     </html>
   );
