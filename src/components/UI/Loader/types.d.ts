@@ -1,4 +1,4 @@
-export type LoaderSizeType = 'small' | 'normal' | 'lage';
+export type LoaderSizeType = 'small' | 'normal' | 'large';
 
 export interface ILoaderProps {
   size?: LoaderSizeType;
