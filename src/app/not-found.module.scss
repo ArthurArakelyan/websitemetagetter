@@ -12,6 +12,4 @@
 
 .not-found__link {
   margin-top: 1.25rem;
-  text-decoration: underline;
-  @include font(1.2rem, 400, var(--primary-text-color), center)
 }

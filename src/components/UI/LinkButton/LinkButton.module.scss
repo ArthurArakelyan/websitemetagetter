@@ -1,0 +1,32 @@
+.link-button {
+  width: fit-content;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.206rem;
+  background-color: var(--card-color);
+  box-shadow: 0 0 5px var(--shadow-md-color);
+  @include flex(row, center, flex-start);
+  transition: box-shadow .2s ease-in-out;
+
+  @include hover() {
+    box-shadow: 0 0 7px var(--shadow-lg-color);
+  }
+}
+
+.link-button__icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.206rem;
+}
+
+.link-button__name {
+  margin-left: 0.5rem;
+  line-height: 1.2rem;
+  @include font(1rem, 500, var(--primary-text-color));
+}
+
+@media (max-width: 767px) {
+  .link-button__name {
+    font-size: 0.875rem;
+  }
+}

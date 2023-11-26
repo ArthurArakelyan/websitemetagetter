@@ -1,3 +1,47 @@
 .home {
-  @include flex(row, flex-start, flex-start);
+  width: 100%;
+  @include flex(column, center, flex-start);
+}
+
+.home__title {
+  letter-spacing: 0.09rem;
+  @include font(2.5rem, 500, var(--primary-text-color), center);
+}
+
+.home__subtitle {
+  width: 60%;
+  margin-top: 0.75rem;
+  line-height: 2rem;
+  @include font(1.25rem, 400, var(--primary-text-color), center);
+}
+
+@media (max-width: 1126px) {
+  .home__subtitle {
+    width: 80%;
+  }
+}
+
+@media (max-width: 840px) {
+  .home__subtitle {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home__subtitle {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .home__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .home__title {
+    font-size: 1.8rem;
+  }
 }
