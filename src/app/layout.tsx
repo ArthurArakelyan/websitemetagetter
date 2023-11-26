@@ -1,11 +1,16 @@
 import { Rubik } from 'next/font/google';
 import { Metadata } from 'next';
+import { cookies } from 'next/headers';
 
 import Header from '@/components/common/Header';
 import Main from '@/components/common/Main';
 import Footer from '@/components/common/Footer';
+import ThemeProvider from '@/context/ThemeProvider';
+
+import getSafeTheme from '@/helpers/getSafeTheme';
 
 import mainTitle from '@/constants/mainTitle';
+import { themeStorageKey } from '@/constants/storageKeys';
 
 import './globals.scss';
 
@@ -24,11 +29,13 @@ const RootLayout = ({
 }: {
   children: React.ReactNode
 }) => {
+  const theme = getSafeTheme(cookies().get(themeStorageKey)?.value);
+
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme={theme}>
       <head>
         <meta name="author" content="Arthur Arakelyan" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content={theme === 'dark' ? '#202020' : '#ffffff'} />
 
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logo16.png" />
@@ -39,13 +46,15 @@ const RootLayout = ({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={rubik.className}>
-        <Header />
+        <ThemeProvider theme={theme}>
+          <Header />
 
-        <Main>
-          {children}
-        </Main>
+          <Main>
+            {children}
+          </Main>
 
-        <Footer />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

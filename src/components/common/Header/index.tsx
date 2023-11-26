@@ -28,9 +28,9 @@ const Header = () => {
           {headerLinks.map((link) => {
             return (
               <li key={link.link} className={styles['header__nav-list-item']}>
-                <a href={link.link} className={styles['header__nav-list-item-link']}>
+                <Link href={link.link} className={styles['header__nav-list-item-link']}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             );
           })}
