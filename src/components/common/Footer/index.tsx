@@ -28,13 +28,13 @@ const Footer = () => {
       <div className={styles['footer__links']}>
         {footerLinks.map((footerLink) => {
           return (
-            <a
+            <Link
               key={footerLink.link}
               href={footerLink.link}
               className={styles['footer__links-link']}
             >
               {footerLink.label}
-            </a>
+            </Link>
           );
         })}
       </div>

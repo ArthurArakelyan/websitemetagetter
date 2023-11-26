@@ -1,33 +1,47 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-// Components
 import DarkIcon from '@/components/UI/Icons/DarkIcon';
 import LightIcon from '@/components/UI/Icons/LightIcon';
 
-// Constants
-import { themeChangedStorageKey } from '@/constants/storageKeys';
+import { useTheme } from '@/context/ThemeProvider';
 
-// Styles
+import setCookie from '@/helpers/setCookie';
+
+import { themeChangedStorageKey, themeStorageKey } from '@/constants/storageKeys';
+
 import styles from './ThemeToggle.module.scss';
 
-const ThemeToggle = () => {
-  const theme = 'light';
+import { ThemeType } from '@/types';
 
-  const themeReversed: 'light' | 'dark' = theme === 'light' ? 'dark' : 'light';
+const ThemeToggle = () => {
+  const router = useRouter();
+
+  const theme = useTheme();
+
+  const themeReversed: ThemeType = theme === 'light' ? 'dark' : 'light';
 
   const handleChangeTheme = () => {
     localStorage.setItem(themeChangedStorageKey, 'true');
 
-    // dispatch(changeTheme(themeReversed));
+    setCookie(themeStorageKey, themeReversed);
+
+    router.refresh();
   };
 
   const handleChangeColorScheme = ({ matches }: MediaQueryListEvent | MediaQueryList) => {
     const themeChanged = localStorage.getItem(themeChangedStorageKey);
 
     if (!themeChanged) {
-      // dispatch(changeTheme(matches ? 'dark' : 'light'));
+      const newTheme = matches ? 'dark' : 'light';
+
+      setCookie(themeStorageKey, newTheme);
+
+      if (theme !== newTheme) {
+        router.refresh();
+      }
     }
   };
 
@@ -49,10 +63,6 @@ const ThemeToggle = () => {
       onClick={handleChangeTheme}
       className={styles['theme-toggle']}
     >
-      <style jsx global>
-        {`:root { color-scheme: ${theme}`}
-      </style>
-
       {themeReversed === 'dark' ? (
         <DarkIcon className={styles['theme-toggle__icon']} />
       ) : (

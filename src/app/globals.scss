@@ -5,6 +5,14 @@ body {
   background-color: var(--background-color);
 }
 
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 // Variables
 :root {
   --card-color: #ffffff;
