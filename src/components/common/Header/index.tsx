@@ -10,13 +10,13 @@ const Header = () => {
   return (
     <header id="header" className={styles['header']}>
       <Link className={styles['header__title']} href="/">
-        {/*<Image*/}
-        {/*  src="/logo192.png"*/}
-        {/*  alt="Logo"*/}
-        {/*  width={32}*/}
-        {/*  height={32}*/}
-        {/*  className={styles['header__title-logo']}*/}
-        {/*/>*/}
+        <img
+          src="/logo64.png"
+          alt="Logo"
+          width={64}
+          height={64}
+          className={styles['header__title-logo']}
+        />
 
         <span className={styles['header__title-text']}>
           Website Meta Getter
