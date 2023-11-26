@@ -1,8 +1,12 @@
 import { Rubik } from 'next/font/google';
+import { Metadata } from 'next';
+
+import Header from '@/components/common/Header';
+import Main from '@/components/common/Main';
+
+import mainTitle from '@/constants/mainTitle';
 
 import './globals.scss';
-
-import styles from './layout.module.scss';
 
 const rubik = Rubik({
   style: 'normal',
@@ -10,29 +14,30 @@ const rubik = Rubik({
   subsets: ['latin'],
 });
 
+export const metadata: Metadata = {
+  title: mainTitle,
+};
+
 const RootLayout = ({
   children,
 }: {
   children: React.ReactNode
 }) => {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <head>
-        <title>Website Meta Getter</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Arthur Arakelyan" />
-        <meta name="theme-color" content="#081e3b" />
+        <meta name="theme-color" content="#ffffff" />
 
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={rubik.className}>
-        <header>Header</header>
+        <Header />
 
-        <main id="main" className={styles['main']}>
+        <Main>
           {children}
-        </main>
+        </Main>
 
         <footer>Footer</footer>
       </body>

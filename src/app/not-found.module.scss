@@ -1,0 +1,17 @@
+.not-found {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  @include absoluteCenter();
+  @include flex(column, center, center);
+}
+
+.not-found__title {
+  @include font(2.5rem, 500, var(--primary-text-color), center);
+}
+
+.not-found__link {
+  margin-top: 1.25rem;
+  text-decoration: underline;
+  @include font(1.2rem, 400, var(--primary-text-color), center)
+}

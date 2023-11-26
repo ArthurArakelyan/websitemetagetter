@@ -1,2 +1,88 @@
 @import '../scss/base/reset';
 @import '../scss/base/typography';
+
+body {
+  background-color: var(--background-color);
+}
+
+// Variables
+:root {
+  --card-color: #ffffff;
+  --primary-text-color: #081e3b;
+  --secondary-text-color: #9fa9be;
+  --theme-button-color: #5f6368;
+  --input-border-color: #a2acc0;
+  --input-border-focus-color: #1665d8;
+
+  // backgrounds
+  --background-color: #f8f8f8;
+  --header-footer-background-color: #ffffff;
+  --input-background-color: #fcfcfc;
+  --shadow-icon-button-background-hover: rgba(200, 200, 200, 0.4);
+  --shadow-icon-button-background-active: rgba(200, 200, 200, 0.8);
+
+  // main colors
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #767676;
+  --success-color: #3e843e;
+  --link-color: #1300E0;
+
+  // shadows
+  --shadow-sm-color: rgba(0, 0, 0, 0.1);
+  --shadow-md-color: rgba(0, 0, 0, 0.2);
+  --shadow-lg-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] {
+  --card-color: #232323;
+  --primary-text-color: #f0f0f0;
+  --secondary-text-color: #bebebe;
+  --theme-button-color: #e9e6e6;
+  --input-border-color: #f0f0f0;
+  --input-border-focus-color: #478dfe;
+
+  // backgrounds
+  --background-color: #121212;
+  --header-footer-background-color: #202020;
+  --input-background-color: #252525;
+  --shadow-icon-button-background-hover: rgba(200, 200, 200, 0.2);
+  --shadow-icon-button-background-active: rgba(200, 200, 200, 0.35);
+
+  // main colors
+  --white: #000000;
+  --black: #ffffff;
+  --gray: #c8c8c8;
+  --success-color: #5cb85c;
+  --link-color: #1100F5;
+
+  // shadows
+  --shadow-sm-color: rgba(150, 150, 150, 0.1);
+  --shadow-md-color: rgba(150, 150, 150, 0.2);
+  --shadow-lg-color: rgba(150, 150, 150, 0.3);
+}
+
+// Support for high-contrast mode
+@media (prefers-contrast: more) {
+  [data-theme="dark"] {
+    --card-color: #0a0a0a;
+    --primary-text-color: #ffffff;
+    --input-border-color: #ffffff;
+    --theme-button-color: #ffffff;
+    --secondary-text-color: #f0f0f0;
+
+    // backgrounds
+    --background-color: #000000;
+    --header-footer-background-color: #0f0f0f;
+    --input-background-color: #111111;
+
+    // main colors
+    --gray: #dcdcdc;
+    --success-color: #3fd53f;
+
+    // shadows
+    --shadow-sm-color: rgba(110, 110, 110, 0.1);
+    --shadow-md-color: rgba(110, 110, 110, 0.2);
+    --shadow-lg-color: rgba(110, 110, 110, 0.3);
+  }
+}

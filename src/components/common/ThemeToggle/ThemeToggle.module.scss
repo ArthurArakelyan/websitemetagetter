@@ -1,0 +1,31 @@
+.theme-toggle {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  @include flex(row, center, center);
+  transition: background-color .2s ease, transform .2s ease;
+
+  @include hover() {
+    background-color: var(--shadow-icon-button-background-hover);
+  }
+
+  @include active() {
+    background-color: var(--shadow-icon-button-background-active);
+  }
+
+  @include touchActive() {
+    transform: scale(0.9);
+  }
+}
+
+.theme-toggle__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--theme-button-color);
+}
