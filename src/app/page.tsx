@@ -1,7 +1,18 @@
+import { Metadata } from 'next';
+
 import WebsiteInput from '@/components/pages/home/WebsiteInput';
 import HomeFAQ from '@/components/pages/home/HomeFAQ';
 
+import url from '@/constants/url';
+import mainTitle from '@/constants/mainTitle';
+
 import styles from './page.module.scss';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 const Home = () => {
   return (
@@ -18,6 +29,26 @@ const Home = () => {
       <WebsiteInput />
 
       <HomeFAQ />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            'name': mainTitle,
+            'url': `${url}/`,
+            'logo': {
+              '@type': 'ImageObject',
+              'caption': mainTitle,
+              'height': 512,
+              'inLanguage': 'en-US',
+              'url': `${url}/logo.png`,
+              'width': 512,
+            },
+          }),
+        }}
+      />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import ThemeProvider from '@/context/ThemeProvider';
 import getSafeTheme from '@/helpers/getSafeTheme';
 
 import mainTitle from '@/constants/mainTitle';
+import url from '@/constants/url';
 import { themeStorageKey } from '@/constants/storageKeys';
 
 import './globals.scss';
@@ -20,8 +21,30 @@ const rubik = Rubik({
   subsets: ['latin'],
 });
 
+const description = `A powerful free tool that checks Meta Tags of any website. Make higher rankings in search engines for your website by using this online tool.`;
+
 export const metadata: Metadata = {
   title: mainTitle,
+  description: description,
+  keywords: 'website, webpage, meta, getter, meta, checker, tag, open, graph, seo',
+  metadataBase: new URL(url),
+  openGraph: {
+    title: mainTitle,
+    description: description,
+    url: '/',
+    type: 'website',
+    images: {
+      url: `${url}/images/og.png`,
+      alt: mainTitle,
+      width: 1260,
+      height: 630,
+    },
+    siteName: mainTitle,
+    locale: 'en',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 const RootLayout = ({
