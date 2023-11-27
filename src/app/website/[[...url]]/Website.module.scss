@@ -1,0 +1,32 @@
+.website {
+  width: 70%;
+  margin: 0 auto;
+  @include flex(column, center, flex-start);
+}
+
+.website__title {
+  margin-top: 2rem;
+  letter-spacing: 0.05rem;
+  width: 100%;
+  line-height: 2.5rem;
+  @include font(2rem, 500, var(--primary-text-color), center);
+}
+
+@media (max-width: 1065px) {
+  .website {
+    width: 90%;
+  }
+}
+
+@media (max-width: 870px) {
+  .website {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .website__title {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+}

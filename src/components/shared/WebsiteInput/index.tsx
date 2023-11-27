@@ -11,12 +11,14 @@ import removeHttp from '@/helpers/removeHttps';
 
 import { urlRegexp } from '@/constants/validation';
 
+import { IWebsiteInputProps } from '@/components/shared/WebsiteInput/types';
+
 import styles from './WebsiteInput.module.scss';
 
-const WebsiteInput = () => {
+const WebsiteInput = ({ initialUrl = '' }: IWebsiteInputProps) => {
   const router = useRouter();
 
-  const [url, setUrl] = useState<string>('');
+  const [url, setUrl] = useState<string>(initialUrl);
 
   const handleChangeUrl: ChangeEventHandler<HTMLInputElement> = (e) => {
     setUrl(e.target.value);

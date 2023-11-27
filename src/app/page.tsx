@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 
-import WebsiteInput from '@/components/pages/home/WebsiteInput';
+import WebsiteInput from '../components/shared/WebsiteInput';
 import HomeFAQ from '@/components/pages/home/HomeFAQ';
 
-import url from '@/constants/url';
-import mainTitle from '@/constants/mainTitle';
+import { mainTitle, url } from '@/constants/seo';
 
 import styles from './page.module.scss';
 
