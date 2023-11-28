@@ -3,10 +3,13 @@ export interface IWebsiteMeta {
   description: string | null;
   keywords: string | null;
   themeColor: string | null;
+
+  // Not Used
   author: string | null;
   generator: string | null;
   publisher: string | null;
   creator: string | null;
+
   og: IWebsiteOGMeta;
   twitter: IWebsiteTwitterMeta;
 }
@@ -16,7 +19,10 @@ export interface IWebsiteOGMeta {
   description: string | null;
   url: string | null;
   siteName: string | null;
+
+  // Not Used
   locale: string | null;
+
   type: string | null;
 
   image: {
@@ -33,6 +39,7 @@ export interface IWebsiteOGMeta {
     type: string | null;
   };
 
+  // Not Used
   audio: {
     url: string | null;
     type: string | null;
@@ -59,6 +66,7 @@ export interface IWebsiteTwitterMeta {
     height: string | null;
   };
 
+  // Not Used
   app: {
     iphone: IWebsiteTwitterMetaApp;
     ipad: IWebsiteTwitterMetaApp;
