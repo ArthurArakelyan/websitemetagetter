@@ -10,6 +10,7 @@ const Header = () => {
   return (
     <header id="header" className={styles['header']}>
       <Link className={styles['header__title']} href="/">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/logo64.png"
           alt="Logo"

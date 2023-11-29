@@ -55,6 +55,7 @@ const ThemeToggle = () => {
     return () => {
       colorSchemeMedia.removeEventListener('change', handleChangeColorScheme);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme]);
 
   return (

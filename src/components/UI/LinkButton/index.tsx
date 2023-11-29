@@ -10,6 +10,7 @@ const LinkButton = ({ href, icon, name, alt, className = '' }: ILinkButtonProps)
       rel="noreferrer"
       href={href}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={icon}
         alt={alt}

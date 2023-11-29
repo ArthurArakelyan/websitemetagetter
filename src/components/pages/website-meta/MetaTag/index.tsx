@@ -41,6 +41,7 @@ const MetaTag = ({ id, title, icon, content, url, color, image, iframe, video }:
       </div>
 
       {image && (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={image.url}
           alt={image.alt}
