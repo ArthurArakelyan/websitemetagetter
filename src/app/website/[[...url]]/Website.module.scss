@@ -40,8 +40,20 @@
   @include flex(column, flex-start, flex-start);
 }
 
-.website__meta-tags-list-item-title {
+.website__meta-tags-list-item-header {
   width: 100%;
+  @include flex(row, center, flex-start);
+}
+
+.website__meta-tags-list-item-header-icon {
+  fill: var(--primary-text-color);
+  margin-right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.website__meta-tags-list-item-header-title {
+  flex: 1;
   text-transform: capitalize;
   @include font(1.5rem, 500, var(--primary-text-color));
 }
