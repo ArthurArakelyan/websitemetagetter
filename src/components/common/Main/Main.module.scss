@@ -8,12 +8,12 @@
 
 @media (max-width: 770px) {
   .main {
-    min-height: calc(100dvh - (7.5rem + 4.375rem));
+    min-height: calc(100dvh - (3.75rem + 7.5rem));
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 767px) {
   .main {
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1rem;
   }
 }

@@ -86,7 +86,7 @@ const Website = async ({ params, searchParams }: IWebsitePageProps) => {
 
   return (
     <div className={styles['website']}>
-      <WebsiteInput initialUrl={getUrlWithQuery(params.url, searchParams)}/>
+      <WebsiteInput initialUrl={getUrlWithQuery(params.url, searchParams)} className={styles['website__input']} />
 
       <h1 className={styles['website__title']}>
         {website.og.title || website.title}

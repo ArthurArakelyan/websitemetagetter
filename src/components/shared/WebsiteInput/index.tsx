@@ -15,7 +15,7 @@ import { IWebsiteInputProps } from '@/components/shared/WebsiteInput/types';
 
 import styles from './WebsiteInput.module.scss';
 
-const WebsiteInput = ({ initialUrl = '' }: IWebsiteInputProps) => {
+const WebsiteInput = ({ initialUrl = '', className = '' }: IWebsiteInputProps) => {
   const router = useRouter();
 
   const [url, setUrl] = useState<string>(initialUrl);
@@ -36,7 +36,7 @@ const WebsiteInput = ({ initialUrl = '' }: IWebsiteInputProps) => {
 
   return (
     <form
-      className={styles['website-input']}
+      className={`${styles['website-input']} ${className}`}
       onSubmit={handleSubmit}
     >
       <Input

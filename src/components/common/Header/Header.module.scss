@@ -54,6 +54,13 @@
   }
 }
 
+@media (max-width: 770px) {
+  .header {
+    height: 3.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
 @media (max-width: 767px) {
   .header__title-text {
     top: -5rem;
@@ -64,12 +71,6 @@
   }
   .header__nav-list-item-link {
     font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .header {
-    padding: 0.5rem 1.5rem;
   }
 }
 
