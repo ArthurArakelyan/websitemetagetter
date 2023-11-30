@@ -1,0 +1,19 @@
+.input-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  animation: inputErrorAppear .2s ease;
+  @include font(0.8rem, 500, $error-color);
+}
+
+@keyframes inputErrorAppear {
+  0% {
+    transform: translateY(-0.25rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -20,7 +20,7 @@ import getUrlWithQuery from '@/helpers/getUrlWithQuery';
 import checkString from '@/helpers/checkString';
 import checkNonNullableObject from '@/helpers/checkNonNullableObject';
 
-import { urlRegexp } from '@/constants/validation';
+import { urlRegexp } from '@/constants/regexp';
 import { defaultOpenGraph, mainTitle } from '@/constants/seo';
 
 import styles from './Website.module.scss';
