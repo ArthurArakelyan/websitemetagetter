@@ -73,7 +73,7 @@ html[data-theme="dark"] {
 // Support for high-contrast mode
 @media (prefers-contrast: more) {
   [data-theme="dark"] {
-    --card-color: #0a0a0a;
+    --card-color: #0d0d0d;
     --primary-text-color: #ffffff;
     --input-border-color: #ffffff;
     --theme-button-color: #ffffff;

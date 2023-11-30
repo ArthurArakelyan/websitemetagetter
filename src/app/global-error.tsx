@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 import Button from '@/components/UI/Button';
 
-import mainTitle from '@/constants/mainTitle';
+import { mainTitle } from '@/constants/seo';
 
 import styles from './not-found.module.scss';
 

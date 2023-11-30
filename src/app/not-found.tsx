@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-import mainTitle from '@/constants/mainTitle';
+import { mainTitle } from '@/constants/seo';
 
 import styles from './not-found.module.scss';
 
