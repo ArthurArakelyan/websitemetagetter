@@ -8,6 +8,7 @@ export interface IMetaTagProps {
   title: string;
   content?: string;
   url?: string;
+  code?: string;
   color?: string;
   image?: {
     url: string;

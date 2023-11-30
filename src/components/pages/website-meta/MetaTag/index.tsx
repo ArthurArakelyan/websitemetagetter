@@ -2,7 +2,7 @@ import styles from './MetaTag.module.scss';
 
 import { IMetaTagProps } from './types';
 
-const MetaTag = ({ id, title, icon, content, url, color, image, iframe, video }: IMetaTagProps) => {
+const MetaTag = ({ id, title, icon, content, url, code, color, image, iframe, video }: IMetaTagProps) => {
   const Icon = icon;
 
   return (
@@ -24,19 +24,25 @@ const MetaTag = ({ id, title, icon, content, url, color, image, iframe, video }:
           />
         )}
 
-        {url ? (
-          <a
-            href={url}
-            target="_blank"
-            referrerPolicy="no-referrer"
-            className={styles['meta-tag__content-text']}
-          >
-            {content || url}
-          </a>
+        {code ? (
+          <pre className={styles['meta-tag__content-code']}>
+            {code}
+          </pre>
         ) : (
-          <p className={styles['meta-tag__content-text']}>
-            {content}
-          </p>
+          url ? (
+            <a
+              href={url}
+              target="_blank"
+              referrerPolicy="no-referrer"
+              className={styles['meta-tag__content-text']}
+            >
+              {content || url}
+            </a>
+          ) : (
+            <p className={styles['meta-tag__content-text']}>
+              {content}
+            </p>
+          )
         )}
       </div>
 

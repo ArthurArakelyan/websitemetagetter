@@ -75,9 +75,10 @@ const getWebsiteMeta = (html: string): IWebsiteMeta | null => {
       },
 
       player: {
-        url: getMeta($, 'twitter:player') || getMeta($, 'twitter:player:stream'),
+        url: getMeta($, 'twitter:player'),
         width: getMeta($, 'twitter:player:width'),
         height: getMeta($, 'twitter:player:height'),
+        stream: getMeta($, 'twitter:player:stream'),
       },
 
       app: {

@@ -43,6 +43,13 @@ a.meta-tag__content-text {
   text-decoration: underline;
 }
 
+.meta-tag__content-code {
+  overflow-x: auto;
+  line-height: 1.5rem;
+  width: 100%;
+  @include font(0.875rem, 400, var(--primary-text-color));
+}
+
 .meta-tag__color {
   position: absolute;
   top: 0;

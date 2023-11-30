@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 
 import WebsiteInput from '@/components/shared/WebsiteInput';
 import MetaTag from '@/components/pages/website-meta/MetaTag';
+import WebsiteResources from '@/components/pages/website-meta/WebsiteResources';
 import TitleIcon from '@/components/UI/Icons/TitleIcon';
 import DescriptionIcon from '@/components/UI/Icons/DescriptionIcon';
 import KeywordIcon from '@/components/UI/Icons/KeywordIcon';
@@ -10,6 +11,8 @@ import ColorIcon from '@/components/UI/Icons/ColorIcon';
 import LinkIcon from '@/components/UI/Icons/LinkIcon';
 import WebIcon from '@/components/UI/Icons/WebIcon';
 import ImageIcon from '@/components/UI/Icons/ImageIcon';
+import VideoIcon from '@/components/UI/Icons/VideoIcon';
+import CardIcon from '@/components/UI/Icons/CardIcon';
 
 import getWebsiteMeta from '@/utilities/getWebsiteMeta';
 
@@ -23,8 +26,6 @@ import { defaultOpenGraph, mainTitle } from '@/constants/seo';
 import styles from './Website.module.scss';
 
 import { IWebsitePageProps } from './types';
-import VideoIcon from '@/components/UI/Icons/VideoIcon';
-import CardIcon from '@/components/UI/Icons/CardIcon';
 
 const getWebsite = async (url: IWebsitePageProps['params']['url'], searchParams: IWebsitePageProps['searchParams']) => {
   try {
@@ -84,6 +85,9 @@ export async function generateMetadata(
 const Website = async ({ params, searchParams }: IWebsitePageProps) => {
   const website = await getWebsite(params.url, searchParams);
 
+  const hasOg = checkNonNullableObject(website.og);
+  const hasTwitter = checkNonNullableObject(website.twitter);
+
   return (
     <div className={styles['website']}>
       <WebsiteInput initialUrl={getUrlWithQuery(params.url, searchParams)} className={styles['website__input']} />
@@ -137,7 +141,7 @@ const Website = async ({ params, searchParams }: IWebsitePageProps) => {
         </ul>
       </div>
 
-      {checkNonNullableObject(website.og) && (
+      {hasOg && (
         <div id="og" className={styles['website__meta-tags']}>
           <h2 className={styles['website__meta-tags-title']}>
             Open graph meta tags
@@ -218,7 +222,7 @@ const Website = async ({ params, searchParams }: IWebsitePageProps) => {
         </div>
       )}
 
-      {checkNonNullableObject(website.twitter) && (
+      {hasTwitter && (
         <div id="twitter" className={styles['website__meta-tags']}>
           <h2 className={styles['website__meta-tags-title']}>
             Twitter meta tags
@@ -290,9 +294,11 @@ const Website = async ({ params, searchParams }: IWebsitePageProps) => {
         </div>
       )}
 
-      {/*<pre style={{marginTop: '30px', whiteSpace: 'pre-wrap', lineHeight: '1.5rem'}}>*/}
-      {/*  {JSON.stringify(website, undefined, 2)}*/}
-      {/*</pre>*/}
+      <WebsiteResources
+        website={website}
+        hasOg={hasOg}
+        hasTwitter={hasTwitter}
+      />
     </div>
   );
 };
