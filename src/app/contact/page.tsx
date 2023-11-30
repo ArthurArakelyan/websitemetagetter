@@ -33,7 +33,7 @@ const Contact = () => {
 
       <div className={styles['contact__descriptions']}>
         <h2 className={styles['contact__description']}>
-          If you have any questions, concerns, ideas for a new calculator, improvements you would like to see, interest in a partnership, or other feedback, please use the contact form below.
+          If you have any questions, concerns, ideas, improvements you would like to see, interest in a partnership, or other feedback, please use the contact form below.
         </h2>
 
         <h3 className={styles['contact__description']}>
