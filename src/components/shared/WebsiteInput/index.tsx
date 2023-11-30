@@ -9,7 +9,7 @@ import ArrowRight from '@/components/UI/Icons/ArrowRight';
 
 import removeHttp from '@/helpers/removeHttps';
 
-import { urlRegexp } from '@/constants/validation';
+import { urlRegexp } from '@/constants/regexp';
 
 import { IWebsiteInputProps } from '@/components/shared/WebsiteInput/types';
 

@@ -1,0 +1,48 @@
+.contact__form {
+  width: 100%;
+  row-gap: 2rem;
+  @include flex(column, center, center);
+}
+
+.contact__form-fields-row {
+  width: 100%;
+  gap: 1rem;
+  @include flex(row, center, center);
+}
+
+.contact__form-submit-wrapper {
+  @include flex(column, center, center);
+}
+
+.contact__form-message {
+  margin-top: 1rem;
+  animation: messageAppear .2s ease forwards;
+  line-height: 1.5rem;
+  @include font(1rem, 400, var(--primary-text-color), center);
+
+  &--success {
+    color: var(--success-color);
+  }
+
+  &--error {
+    color: $error-color;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact__form-fields-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@keyframes messageAppear {
+  0% {
+    transform: translateY(-0.5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
