@@ -41,13 +41,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-@media (forced-colors: active) {
-  svg {
-    fill: CanvasText !important;
-  }
-
-  button svg {
-    fill: ButtonText !important;
-  }
-}

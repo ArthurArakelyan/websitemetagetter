@@ -1,0 +1,19 @@
+@media (prefers-reduced-motion: reduce) {
+  *, *::after, *::before {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (forced-colors: active) {
+  svg {
+    fill: CanvasText !important;
+  }
+
+  button svg {
+    fill: ButtonText !important;
+  }
+}
