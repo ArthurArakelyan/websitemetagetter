@@ -5,9 +5,9 @@ import type { CheerioAPI } from 'cheerio';
 
 import { IWebsiteMeta, IWebsiteOGMeta, IWebsiteTwitterMeta } from '@/types';
 
-const getMeta = ($: CheerioAPI, name: string): string | null => {
+const getMeta = ($: CheerioAPI, name: string, og = false): string | null => {
   try {
-    return $(`meta[name="${name}"]`).attr('content') || $(`meta[property="${name}"]`).attr('content') || null;
+    return $(`meta[name="${name}"]`).attr('content') || (og ? $(`meta[property="${name}"]`).attr('content') : null) || null;
   } catch (error) {
     console.error(error);
 
@@ -33,30 +33,30 @@ const getWebsiteMeta = (html: string): IWebsiteMeta | null => {
     const creator = getMeta($, 'creator');
 
     const og: IWebsiteOGMeta = {
-      title: getMeta($, 'og:title'),
-      description: getMeta($, 'og:description'),
-      url: getMeta($, 'og:url'),
-      siteName: getMeta($, 'og:site_name'),
-      locale: getMeta($, 'og:locale'),
-      type: getMeta($, 'og:type'),
+      title: getMeta($, 'og:title', true),
+      description: getMeta($, 'og:description', true),
+      url: getMeta($, 'og:url', true),
+      siteName: getMeta($, 'og:site_name', true),
+      locale: getMeta($, 'og:locale', true),
+      type: getMeta($, 'og:type', true),
 
       image: {
-        url: getMeta($, 'og:image') || getMeta($, 'og:image:url') || getMeta($, 'og:image:secure_url'),
-        width: getMeta($, 'og:image:width'),
-        height: getMeta($, 'og:image:height'),
-        alt: getMeta($, 'og:image:alt'),
+        url: getMeta($, 'og:image', true) || getMeta($, 'og:image:url', true) || getMeta($, 'og:image:secure_url', true),
+        width: getMeta($, 'og:image:width', true),
+        height: getMeta($, 'og:image:height', true),
+        alt: getMeta($, 'og:image:alt', true),
       },
 
       video: {
-        url: getMeta($, 'og:video') || getMeta($, 'og:video:url') || getMeta($, 'og:video:secure_url'),
-        type: getMeta($, 'og:video:type'),
-        width: getMeta($, 'og:video:width'),
-        height: getMeta($, 'og:video:height'),
+        url: getMeta($, 'og:video', true) || getMeta($, 'og:video:url', true) || getMeta($, 'og:video:secure_url', true),
+        type: getMeta($, 'og:video:type', true),
+        width: getMeta($, 'og:video:width', true),
+        height: getMeta($, 'og:video:height', true),
       },
 
       audio: {
-        url: getMeta($, 'og:audio') || getMeta($, 'og:audio:url') || getMeta($, 'og:audio:secure_url'),
-        type: getMeta($, 'og:audio:type'),
+        url: getMeta($, 'og:audio', true) || getMeta($, 'og:audio:url', true) || getMeta($, 'og:audio:secure_url', true),
+        type: getMeta($, 'og:audio:type', true),
       },
     };
 

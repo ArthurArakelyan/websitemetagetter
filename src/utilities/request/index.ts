@@ -2,10 +2,13 @@ import { apiUrl } from '@/constants/url';
 
 import { RequestMethodType } from './types';
 
-const request = async <T = any, D = any> (method: RequestMethodType, url: string, data?: D): Promise<T> => {
+const request = async <T = any, D = any>(method: RequestMethodType, url: string, data?: D): Promise<T> => {
   return fetch(`${apiUrl}${url}`, {
     method: method,
     body: data ? JSON.stringify(data) : undefined,
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
     .then((response) => {
       return response.json();
