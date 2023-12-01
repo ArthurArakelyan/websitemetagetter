@@ -1,0 +1,36 @@
+.blog {
+  width: 100%;
+  position: relative;
+  @include flex(column, center, flex-start);
+}
+
+.blog__title {
+  letter-spacing: 1.504px;
+  line-height: 44px;
+  @include font(40px, 500, var(--primary-text-color), center);
+}
+
+.blog__content {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 48px;
+}
+
+.blog__cards {
+  width: 100%;
+  gap: 16px;
+  flex-wrap: wrap;
+  @include flex(row, stretch, flex-start);
+}
+
+@media (max-width: 767px) {
+  .blog__title {
+    letter-spacing: 0.094rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .blog__content {
+    margin-top: 2rem;
+  }
+}

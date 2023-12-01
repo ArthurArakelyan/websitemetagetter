@@ -8,6 +8,10 @@ export const siteFaq: IFaq[] = [
     description: `${mainTitle} is a tool which helps you to quickly and easily check webpage's meta tags. ${mainTitle} supports almost all meta tags and provides information about them.`,
   },
   {
+    title: 'How to check Meta Tags of a website?',
+    description: `To check meta tags of a website you need to fill the <b>Website Address</b> input with the URL of a website in <a href="/">Home</a> page, then submit it by clicking the button right after the input, after that ${mainTitle} will <b>check and provide</b> for you all meta tags the inserted website has.`,
+  },
+  {
     title: `Is ${mainTitle} free?`,
     description: `Yes, it is. ${mainTitle} is a <b>free</b> tool for public use.`,
   },
@@ -25,6 +29,10 @@ export const siteFaqScheme: IFaq[] = [
   {
     title: `What is ${mainTitle}?`,
     description: `${mainTitle} is a tool which helps you to quickly and easily check webpage's meta tags. ${mainTitle} supports almost all meta tags and provides information about them.`,
+  },
+  {
+    title: 'How to check Meta Tags of a website?',
+    description: `To check meta tags of a website you need to fill the Website Address input with the URL of a website in Home page, then submit it by clicking the button right after the input, after that ${mainTitle} will check and provide for you all meta tags the inserted website has.`,
   },
   {
     title: `Is ${mainTitle} free?`,
