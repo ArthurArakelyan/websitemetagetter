@@ -3,6 +3,8 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
+import withErrorBoundary from '@/HOC/withErrorBoundary';
+
 import DarkIcon from '@/components/UI/Icons/DarkIcon';
 import LightIcon from '@/components/UI/Icons/LightIcon';
 
@@ -73,4 +75,4 @@ const ThemeToggle = () => {
   );
 };
 
-export default ThemeToggle;
+export default withErrorBoundary(ThemeToggle);
