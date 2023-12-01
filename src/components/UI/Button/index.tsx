@@ -19,24 +19,31 @@ const Button = ({ loading = false, children, className = '', onClick, disabled, 
       onClick(e);
     }
 
-    const id = Math.random().toString();
-    const size = e.currentTarget.clientWidth;
-    const rect = e.currentTarget.getBoundingClientRect();
+    try {
+      if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        window.matchMedia('(prefers-reduced-motion: reduce)');
+        const id = Math.random().toString();
+        const size = e.currentTarget.clientWidth;
+        const rect = e.currentTarget.getBoundingClientRect();
 
-    setRipples((prevState) => {
-      return [...prevState, {
-        id,
-        size,
-        top: e.clientY - rect.top - 50 + 'px',
-        left: e.clientX - rect.left - 50 + 'px',
-      }];
-    });
+        setRipples((prevState) => {
+          return [...prevState, {
+            id,
+            size,
+            top: e.clientY - rect.top - 50 + 'px',
+            left: e.clientX - rect.left - 50 + 'px',
+          }];
+        });
 
-    setTimeout(() => {
-      setRipples((prevState) => {
-        return prevState.filter((ripple) => ripple.id !== id);
-      });
-    }, 800);
+        setTimeout(() => {
+          setRipples((prevState) => {
+            return prevState.filter((ripple) => ripple.id !== id);
+          });
+        }, 800);
+      }
+    } catch (error: any) {
+      console.error(error);
+    }
   }
 
   const ripplesContent = (

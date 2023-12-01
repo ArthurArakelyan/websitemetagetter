@@ -1,7 +1,7 @@
 .loader-wrapper {
   display: inline-block;
   color: $primary-color;
-  animation: rotate 1.3s linear infinite;
+  animation: rotate 1.3s linear infinite !important;
 
   &--small {
     width: 1.5rem;
@@ -28,7 +28,7 @@
   stroke: currentColor;
   stroke-dasharray: 80px, 200px;
   stroke-dashoffset: 0;
-  animation: rotate-circle 1.4s ease-in-out infinite;
+  animation: rotate-circle 1.4s ease-in-out infinite !important;
 }
 
 @keyframes rotate {
