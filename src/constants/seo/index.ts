@@ -1,12 +1,10 @@
-import type { Metadata } from 'next';
-
 export const mainTitle = 'Website Meta Getter';
 
 export const mainDescription = `A powerful free tool that checks Meta Tags of any website. Make higher rankings in search engines for your website by using this online tool.`;
 
 export const url = 'https://websitemetagetter.vercel.app';
 
-export const defaultOpenGraph: Metadata['openGraph'] = {
+export const defaultOpenGraph = {
   title: mainTitle,
   description: mainDescription,
   url: '/',
@@ -19,4 +17,24 @@ export const defaultOpenGraph: Metadata['openGraph'] = {
   },
   siteName: mainTitle,
   locale: 'en',
+};
+
+export const authorObject = {
+  '@type': 'Person',
+  'name': 'Arthur Arakelyan',
+};
+
+export const organizationObject = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  'name': mainTitle,
+  'url': `${url}/`,
+  'logo': {
+    '@type': 'ImageObject',
+    'caption': mainTitle,
+    'height': 512,
+    'inLanguage': 'en-US',
+    'url': `${url}/logo.png`,
+    'width': 512,
+  },
 };

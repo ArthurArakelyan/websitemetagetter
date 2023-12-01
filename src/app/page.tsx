@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import WebsiteInput from '../components/shared/WebsiteInput';
 import HomeFAQ from '@/components/pages/home/HomeFAQ';
 
-import { mainTitle, url } from '@/constants/seo';
+import { organizationObject } from '@/constants/seo';
 
 import styles from './page.module.scss';
 
@@ -32,20 +32,7 @@ const Home = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            'name': mainTitle,
-            'url': `${url}/`,
-            'logo': {
-              '@type': 'ImageObject',
-              'caption': mainTitle,
-              'height': 512,
-              'inLanguage': 'en-US',
-              'url': `${url}/logo.png`,
-              'width': 512,
-            },
-          }),
+          __html: JSON.stringify(organizationObject),
         }}
       />
     </div>
