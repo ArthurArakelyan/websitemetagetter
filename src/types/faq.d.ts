@@ -1,5 +1,10 @@
 export interface IFaq {
   title: string;
+  description: string;
+}
+
+export interface IHomeFaq {
+  title: string;
   description: string[];
   links?: IFAQLink[];
 }
