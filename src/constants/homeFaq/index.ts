@@ -1,6 +1,6 @@
-import { IFaq } from '@/types';
+import { IHomeFaq } from '@/types';
 
-const homeFaq: IFaq[] = [
+const homeFaq: IHomeFaq[] = [
   {
     title: 'What are meta tags?',
     description: [

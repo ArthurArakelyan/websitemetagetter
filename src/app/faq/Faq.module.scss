@@ -1,0 +1,84 @@
+.faq {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  @include flex(column, center, flex-start);
+}
+
+.faq__title {
+  letter-spacing: 0.094rem;
+  line-height: 2.75rem;
+  @include font(2.5rem, 500, var(--primary-text-color), center);
+}
+
+.faq__content {
+  width: 100%;
+  margin-top: 3rem;
+  @include flex(column, flex-start, flex-start);
+}
+
+.faq__cards {
+  width: 100%;
+  row-gap: 2rem;
+  @include flex(column, flex-start, flex-start);
+}
+
+.faq__card {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+}
+
+.faq__card-title {
+  line-height: 2.25rem;
+  @include font(1.75rem, 500, var(--primary-text-color));
+}
+
+.faq__card-description {
+  margin-top: 1rem;
+  text-rendering: optimizeSpeed;
+  line-height: 1.688rem;
+  @include font(1.125rem, 400, var(--primary-text-color));
+
+  b {
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--link-color);
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 1065px) {
+  .faq {
+    width: 90%;
+  }
+}
+
+@media (max-width: 870px) {
+  .faq {
+    width: 100%;
+  }
+
+  .faq__content {
+    margin-top: 2rem;
+  }
+
+  .faq__card-description {
+    word-break: break-word;
+    line-height: 1.6rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .faq__title {
+    line-height: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .faq__card-title {
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+}
