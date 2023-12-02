@@ -11,6 +11,7 @@ const canonical = '/privacy-policy';
 export const metadata: Metadata = {
   title,
   description,
+  keywords: 'website, meta, getter, privacy, policy',
   alternates: {
     canonical: canonical,
   },

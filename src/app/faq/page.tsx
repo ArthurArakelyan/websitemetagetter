@@ -14,6 +14,7 @@ const canonical = '/faq';
 export const metadata: Metadata = {
   title,
   description,
+  keywords: 'website, meta, getter, faq, frequently, asked, questions',
   alternates: {
     canonical: canonical,
   },
