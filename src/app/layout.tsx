@@ -43,6 +43,7 @@ const RootLayout = ({
       <head>
         <meta name="author" content="Arthur Arakelyan" />
         <meta name="theme-color" content={theme === 'dark' ? '#202020' : '#ffffff'} />
+        <meta name="google-site-verification" content="NnQ3jdufTEVEzccmFj_iHSm8ytzg9mPK8EKnC7kMQsM" />
 
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logo16.png" />
