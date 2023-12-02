@@ -37,6 +37,12 @@ export default function ThemeProvider({ children }: IThemeProviderProps) {
 
       if (html && html.setAttribute) {
         html.setAttribute('data-theme', theme);
+
+        const themeColorMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+
+        if (themeColorMeta) {
+          themeColorMeta.setAttribute('content', theme === 'dark' ? '#202020' : '#ffffff');
+        }
       }
     } catch (error: any) {
       console.error(error);
