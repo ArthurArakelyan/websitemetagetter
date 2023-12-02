@@ -12,6 +12,7 @@ const canonical = '/about';
 export const metadata: Metadata = {
   title,
   description,
+  keywords: 'website, meta, getter, about us',
   alternates: {
     canonical: canonical,
   },

@@ -11,6 +11,7 @@ const canonical = '/terms-of-use';
 export const metadata: Metadata = {
   title,
   description,
+  keywords: 'website, meta, getter, terms, use, service',
   alternates: {
     canonical: canonical,
   },

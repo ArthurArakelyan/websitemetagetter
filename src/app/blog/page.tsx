@@ -14,6 +14,7 @@ const canonical = '/blog';
 export const metadata: Metadata = {
   title,
   description,
+  keywords: 'website, meta, getter, blog, articles, updates, front-end, seo, development',
   alternates: {
     canonical: canonical,
   },

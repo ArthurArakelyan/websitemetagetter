@@ -13,6 +13,7 @@ const canonical = '/contact';
 export const metadata: Metadata = {
   title,
   description,
+  keywords: 'website, meta, getter, contact us',
   alternates: {
     canonical: canonical,
   },

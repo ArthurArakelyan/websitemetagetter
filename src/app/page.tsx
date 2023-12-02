@@ -3,7 +3,10 @@ import { Metadata } from 'next';
 import WebsiteInput from '../components/shared/WebsiteInput';
 import HomeFAQ from '@/components/pages/home/HomeFAQ';
 
+import getFaqStructuredData from '@/helpers/getFaqStructuredData';
+
 import { organizationObject } from '@/constants/seo';
+import homeFaq from '@/constants/homeFaq';
 
 import styles from './page.module.scss';
 
@@ -32,7 +35,14 @@ const Home = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationObject),
+          __html: JSON.stringify([
+            organizationObject,
+            {
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              'mainEntity': getFaqStructuredData(homeFaq),
+            }
+          ]),
         }}
       />
     </div>

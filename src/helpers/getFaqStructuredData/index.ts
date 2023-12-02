@@ -1,6 +1,6 @@
-import { IFaq } from '@/types';
+import { IFaq, IHomeFaq } from '@/types';
 
-const getFaqStructuredData = (faq: IFaq[]) => {
+const getFaqStructuredData = (faq: IFaq[] | IHomeFaq[]) => {
   try {
     return faq.map((question) => {
       return {
@@ -8,7 +8,9 @@ const getFaqStructuredData = (faq: IFaq[]) => {
         name: question.title,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: question.description,
+          text: Array.isArray(question.description)
+            ? question.description.join('<br><br>')
+            : question.description,
         },
       };
     });
