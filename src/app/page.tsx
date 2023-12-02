@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 import WebsiteInput from '../components/shared/WebsiteInput';
+import TryExample from '@/components/pages/home/TryExample';
 import HomeFAQ from '@/components/pages/home/HomeFAQ';
 
 import getFaqStructuredData from '@/helpers/getFaqStructuredData';
@@ -29,6 +30,8 @@ const Home = () => {
       </h2>
 
       <WebsiteInput />
+
+      <TryExample />
 
       <HomeFAQ />
 
