@@ -1,0 +1,116 @@
+.social-card-preview {
+  width: 100%;
+  margin-top: 2rem;
+  @include flex(column, flex-start, flex-start);
+}
+
+.social-card-preview__title {
+  text-transform: capitalize;
+  @include font(1.875rem, 500, var(--primary-text-color));
+}
+
+.social-card {
+  margin-top: 1.5rem;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 4px var(--shadow-md-color);
+  background-color: var(--card-color);
+  @include flex(column, flex-start, flex-start);
+}
+
+.social-card__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px 4px 0 0;
+  display: block;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+.social-card__empty-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px 4px 0 0;
+  background-color: #eeeeee;
+  @include flex(row, center, center);
+}
+.social-card__empty-image-icon {
+  width: 64px;
+  height: 64px;
+  fill: #737373;
+}
+
+.social-card__content {
+  padding: 16px;
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+}
+
+.social-card__content-title {
+  width: 100%;
+  line-height: initial;
+  @include ellipsis();
+  @include font(16px, 500, var(--social-card-preview-title));
+}
+
+.social-card__content-description {
+  margin-top: 8px;
+  line-height: 20px;
+  @include font(14px, 400, var(--social-card-preview-description));
+}
+
+.social-card__content-url {
+  width: 100%;
+  margin-top: 8px;
+  line-height: 20px;
+  @include ellipsis();
+  @include font(14px, 400, var(--social-card-preview-link));
+}
+
+@media (max-width: 992px) {
+  .social-card-preview__title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .social-card {
+    max-width: 30rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem var(--shadow-md-color);
+  }
+
+  .social-card__image {
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+  .social-card__empty-image {
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+  .social-card__empty-image-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .social-card__content {
+    padding: 1rem;
+  }
+
+  .social-card__content-title {
+    font-size: 1rem;
+  }
+
+  .social-card__content-description {
+    margin-top: 0.5rem;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .social-card__content-url {
+    margin-top: 0.5rem;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+  }
+}

@@ -2,6 +2,7 @@ import { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import WebsiteInput from '@/components/shared/WebsiteInput';
+import SocialCardPreview from '@/components/pages/website-meta/SocialCardPreview';
 import MetaTag from '@/components/pages/website-meta/MetaTag';
 import WebsiteResources from '@/components/pages/website-meta/WebsiteResources';
 import TitleIcon from '@/components/UI/Icons/TitleIcon';
@@ -85,16 +86,19 @@ export async function generateMetadata(
 const Website = async ({ params, searchParams }: IWebsitePageProps) => {
   const website = await getWebsite(params.url, searchParams);
 
+  const websiteUrl = getUrlWithQuery(params.url, searchParams);
   const hasOg = checkNonNullableObject(website.og);
   const hasTwitter = checkNonNullableObject(website.twitter);
 
   return (
     <div className={styles['website']}>
-      <WebsiteInput initialUrl={getUrlWithQuery(params.url, searchParams)} className={styles['website__input']} />
+      <WebsiteInput initialUrl={websiteUrl} className={styles['website__input']} />
 
       <h1 className={styles['website__title']}>
         {website.og.title || website.title}
       </h1>
+
+      <SocialCardPreview website={website} websiteUrl={websiteUrl} />
 
       <div id="meta" className={styles['website__meta-tags']}>
         <h2 className={styles['website__meta-tags-title']}>

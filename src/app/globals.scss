@@ -41,6 +41,11 @@ html[data-theme="dark"] {
   --shadow-sm-color: rgba(0, 0, 0, 0.1);
   --shadow-md-color: rgba(0, 0, 0, 0.2);
   --shadow-lg-color: rgba(0, 0, 0, 0.3);
+
+  // custom
+  --social-card-preview-title: #333333;
+  --social-card-preview-description: #555555;
+  --social-card-preview-link: rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="dark"] {
@@ -69,6 +74,11 @@ html[data-theme="dark"] {
   --shadow-sm-color: rgba(150, 150, 150, 0.1);
   --shadow-md-color: rgba(150, 150, 150, 0.2);
   --shadow-lg-color: rgba(150, 150, 150, 0.3);
+
+  // custom
+  --social-card-preview-title: #f0f0f0;
+  --social-card-preview-description: #b4b4b4;
+  --social-card-preview-link: rgba(255, 255, 255, 0.45);
 }
 
 // Support for high-contrast mode
