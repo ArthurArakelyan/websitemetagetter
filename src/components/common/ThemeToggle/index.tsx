@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 
 import withErrorBoundary from '@/HOC/withErrorBoundary';
 
@@ -10,8 +9,6 @@ import LightIcon from '@/components/UI/Icons/LightIcon';
 
 import { useTheme } from '@/context/ThemeProvider';
 
-import setCookie from '@/helpers/setCookie';
-
 import { themeChangedStorageKey, themeStorageKey } from '@/constants/storageKeys';
 
 import styles from './ThemeToggle.module.scss';
@@ -19,18 +16,14 @@ import styles from './ThemeToggle.module.scss';
 import { ThemeType } from '@/types';
 
 const ThemeToggle = () => {
-  const router = useRouter();
-
-  const theme = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const themeReversed: ThemeType = theme === 'light' ? 'dark' : 'light';
 
   const handleChangeTheme = () => {
     localStorage.setItem(themeChangedStorageKey, 'true');
-
-    setCookie(themeStorageKey, themeReversed);
-
-    router.refresh();
+    localStorage.setItem(themeStorageKey, themeReversed);
+    setTheme(themeReversed);
   };
 
   const handleChangeColorScheme = ({ matches }: MediaQueryListEvent | MediaQueryList) => {
@@ -40,9 +33,8 @@ const ThemeToggle = () => {
       const newTheme = matches ? 'dark' : 'light';
 
       if (theme !== newTheme) {
-        setCookie(themeStorageKey, newTheme);
-
-        router.refresh();
+        localStorage.setItem(themeStorageKey, newTheme);
+        setTheme(newTheme);
       }
     }
   };
