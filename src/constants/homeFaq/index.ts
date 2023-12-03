@@ -17,13 +17,13 @@ const homeFaq: IHomeFaq[] = [
       {
         name: 'MDN - Standard metadata names',
         alt: 'MDN',
-        icon: 'https://developer.mozilla.org/favicon.ico',
+        icon: '/images/faq/mdn.ico',
         link: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name',
       },
       {
         name: `MDN - What's in the head? Metadata in HTML`,
         alt: 'MDN',
-        icon: 'https://developer.mozilla.org/favicon.ico',
+        icon: '/images/faq/mdn.ico',
         link: 'https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML',
       },
     ],
@@ -42,7 +42,7 @@ const homeFaq: IHomeFaq[] = [
       {
         name: 'OGP - The Open Graph protocol',
         alt: 'OGP',
-        icon: 'https://ogp.me/favicon.ico',
+        icon: '/images/faq/ogp.ico',
         link: 'https://ogp.me/',
       },
     ],
@@ -62,7 +62,7 @@ const homeFaq: IHomeFaq[] = [
       {
         name: 'Twitter Developer Platform - Cards',
         alt: 'Twitter Developer Platform',
-        icon: 'https://abs.twimg.com/favicons/twitter-orange.3.ico',
+        icon: '/images/faq/twitter.ico',
         link: 'https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup',
       },
     ],
