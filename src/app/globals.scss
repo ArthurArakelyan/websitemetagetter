@@ -6,16 +6,13 @@ body {
   background-color: var(--background-color);
 }
 
-html[data-theme="light"] {
-  color-scheme: light;
-}
-
-html[data-theme="dark"] {
-  color-scheme: dark;
-}
-
 // Variables
-:root {
+@mixin lightVariables() {
+  color-scheme: light;
+
+  --light: block;
+  --dark: none;
+
   --card-color: #ffffff;
   --primary-text-color: #081e3b;
   --secondary-text-color: #9fa9be;
@@ -31,8 +28,6 @@ html[data-theme="dark"] {
   --shadow-icon-button-background-active: rgba(200, 200, 200, 0.8);
 
   // main colors
-  --white: #ffffff;
-  --black: #000000;
   --gray: #767676;
   --success-color: #3e843e;
   --link-color: #1300E0;
@@ -48,7 +43,12 @@ html[data-theme="dark"] {
   --social-card-preview-link: rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="dark"] {
+@mixin darkVariables() {
+  color-scheme: dark;
+
+  --light: none;
+  --dark: block;
+
   --card-color: #232323;
   --primary-text-color: #f0f0f0;
   --secondary-text-color: #bebebe;
@@ -64,8 +64,6 @@ html[data-theme="dark"] {
   --shadow-icon-button-background-active: rgba(200, 200, 200, 0.35);
 
   // main colors
-  --white: #000000;
-  --black: #ffffff;
   --gray: #c8c8c8;
   --success-color: #5cb85c;
   --link-color: #1100F5;
@@ -81,27 +79,16 @@ html[data-theme="dark"] {
   --social-card-preview-link: rgba(255, 255, 255, 0.45);
 }
 
-// Support for high-contrast mode
-@media (prefers-contrast: more) {
-  [data-theme="dark"] {
-    --card-color: #0d0d0d;
-    --primary-text-color: #ffffff;
-    --input-border-color: #ffffff;
-    --theme-button-color: #ffffff;
-    --secondary-text-color: #f0f0f0;
+:root, :root[data-theme="light"] {
+  @include lightVariables();
+}
 
-    // backgrounds
-    --background-color: #000000;
-    --header-footer-background-color: #0f0f0f;
-    --input-background-color: #111111;
-
-    // main colors
-    --gray: #dcdcdc;
-    --success-color: #3fd53f;
-
-    // shadows
-    --shadow-sm-color: rgba(110, 110, 110, 0.1);
-    --shadow-md-color: rgba(110, 110, 110, 0.2);
-    --shadow-lg-color: rgba(110, 110, 110, 0.3);
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include darkVariables();
   }
+}
+
+:root[data-theme="dark"] {
+  @include darkVariables();
 }

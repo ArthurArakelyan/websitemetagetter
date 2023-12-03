@@ -28,4 +28,12 @@
   width: 1.5rem;
   height: 1.5rem;
   fill: var(--theme-button-color);
+
+  path:first-of-type {
+    display: var(--dark);
+  }
+
+  path:last-of-type {
+    display: var(--light);
+  }
 }
