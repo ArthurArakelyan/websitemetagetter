@@ -4,7 +4,6 @@ import { Metadata } from 'next';
 import Header from '@/components/common/Header';
 import Main from '@/components/common/Main';
 import Footer from '@/components/common/Footer';
-import ThemeProvider from '@/context/ThemeProvider';
 
 import { defaultOpenGraph, mainDescription, mainTitle, url } from '@/constants/seo';
 
@@ -48,15 +47,13 @@ const RootLayout = ({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={rubik.className}>
-        <ThemeProvider>
-          <Header />
+        <Header />
 
-          <Main>
-            {children}
-          </Main>
+        <Main>
+          {children}
+        </Main>
 
-          <Footer />
-        </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

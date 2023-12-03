@@ -11,7 +11,7 @@
   justify-content: $justifyContent;
 }
 
-@mixin font($size: 1rem, $weight: 400, $color: var(--black), $align: left) {
+@mixin font($size: 1rem, $weight: 400, $color: var(--primary-text-color), $align: left) {
   font-size: $size;
   font-weight: $weight;
   color: $color;
