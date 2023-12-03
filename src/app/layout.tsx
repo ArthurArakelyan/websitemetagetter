@@ -34,7 +34,6 @@ const RootLayout = ({
   return (
     <html lang="en">
       <head>
-        <meta name="author" content="Arthur Arakelyan" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="google-site-verification" content="NnQ3jdufTEVEzccmFj_iHSm8ytzg9mPK8EKnC7kMQsM" />
 
