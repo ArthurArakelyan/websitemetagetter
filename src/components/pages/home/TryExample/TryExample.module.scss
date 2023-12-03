@@ -3,6 +3,7 @@
   @include font(1rem, 400, var(--primary-text-color), center);
 
   a {
+    font-weight: 500;
     color: var(--link-color);
 
     &:hover {
