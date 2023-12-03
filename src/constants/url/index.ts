@@ -1,1 +1,1 @@
-export const apiUrl = 'https://cssunitconverter.vercel.app/api/';
+export const apiUrl = 'https://websitemetagetter-server.vercel.app/api/';

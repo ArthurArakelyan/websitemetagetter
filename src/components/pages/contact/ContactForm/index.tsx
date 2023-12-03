@@ -13,11 +13,10 @@ import ContactService from '@/services/ContactService';
 import { emailMessage, maxLength, maxLengthMessages, requiredMessage } from '@/constants/validation';
 import { emailRegexp } from '@/constants/regexp';
 import { baseErrorMessage } from '@/constants/messages';
-import { mainTitle } from '@/constants/seo';
 
 import styles from './ContactForm.module.scss';
 
-import { IContactForm, IContactPayloadData, IContactResponseData } from './types';
+import { IContactForm, IContactResponseData } from './types';
 
 const ContactForm = () => {
   const { handleSubmit, control, reset } = useForm<IContactForm>({
@@ -38,10 +37,7 @@ const ContactForm = () => {
       setLoading(true);
       setError(null);
 
-      const response = await ContactService.sendContactMessage<IContactResponseData, IContactPayloadData>({
-        title: mainTitle,
-        ...data,
-      });
+      const response = await ContactService.sendContactMessage<IContactResponseData, IContactForm>(data);
 
       if (!response?.success) {
         throw new Error(response?.message || baseErrorMessage);

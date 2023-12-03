@@ -9,7 +9,3 @@ export interface IContactResponseData {
   statusCode: number;
   message: string;
 }
-
-export interface IContactPayloadData extends IContactForm {
-  title: string;
-}
