@@ -35,7 +35,7 @@ const Home = () => {
 
       <h2 className={styles['home__subtitle']}>
         A powerful tool that checks Meta Tags of the given website.<br/>
-        Analyze and improve your webpage&apos;s meta tags for higher rankings in search engines and more beautiful look in social/chat apps.
+        Analyze and build your webpage&apos;s meta tags for higher rankings in search engines and more beautiful look in social/chat apps.
       </h2>
 
       <WebsiteInput />
