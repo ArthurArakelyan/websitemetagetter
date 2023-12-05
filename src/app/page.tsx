@@ -6,14 +6,23 @@ import HomeFAQ from '@/components/pages/home/HomeFAQ';
 
 import getFaqStructuredData from '@/helpers/getFaqStructuredData';
 
-import { organizationObject } from '@/constants/seo';
+import { defaultOpenGraph, mainTitle, organizationObject } from '@/constants/seo';
 import homeFaq from '@/constants/homeFaq';
 
 import styles from './page.module.scss';
 
+const title = `Build Your Meta Tags | ${mainTitle}`;
+const canonical = '/';
+
 export const metadata: Metadata = {
+  title,
   alternates: {
-    canonical: '/',
+    canonical: canonical,
+  },
+  openGraph: {
+    ...defaultOpenGraph,
+    title,
+    url: canonical,
   },
 };
 
