@@ -1,4 +1,5 @@
 import blogs from '@/constants/blogs';
+import websites from '@/constants/websites';
 import { url } from '@/constants/seo';
 
 import { ISitemap } from '@/types';
@@ -9,7 +10,7 @@ const getBlogs = async (): Promise<ISitemap[]> => {
       return {
         url: url + '/blog/' + blog.id,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
+        changeFrequency: 'monthly',
         priority: 0.8,
       };
     });
@@ -20,10 +21,16 @@ const getBlogs = async (): Promise<ISitemap[]> => {
   }
 };
 
-// TODO: add user queried websites and filter duplicates
 const getWebsites = async (): Promise<ISitemap[]> => {
   try {
-    return [];
+    return websites.map((website) => {
+      return {
+        url: url + '/website/' + website,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      };
+    });
   } catch (error) {
     console.error(error);
 
