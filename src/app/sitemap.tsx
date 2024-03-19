@@ -38,56 +38,72 @@ const getWebsites = async (): Promise<ISitemap[]> => {
   }
 };
 
-const Sitemap = async (): Promise<ISitemap[]> => {
-  const blogs = await getBlogs();
-  const websites = await getWebsites();
+export const getSitemap = async (): Promise<ISitemap[]> => {
+  try {
+    const blogs = await getBlogs();
+    const websites = await getWebsites();
 
-  return [
-    {
-      url: url,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: url + '/about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: url + '/contact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: url + '/faq',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: url + '/terms-of-use',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: url + '/privacy-policy',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: url + '/blog',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    ...blogs,
-    ...websites,
-  ];
+    return [
+      {
+        url: url,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 1,
+      },
+      {
+        url: url + '/about',
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      },
+      {
+        url: url + '/contact',
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      },
+      {
+        url: url + '/faq',
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      },
+      {
+        url: url + '/links',
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      },
+      {
+        url: url + '/terms-of-use',
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      },
+      {
+        url: url + '/privacy-policy',
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      },
+      {
+        url: url + '/blog',
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+      },
+      ...blogs,
+      ...websites,
+    ];
+  } catch (error) {
+    console.error(error);
+
+    return [];
+  }
+};
+
+const Sitemap = async (): Promise<ISitemap[]> => {
+  return await getSitemap();
 };
 
 export default Sitemap;
