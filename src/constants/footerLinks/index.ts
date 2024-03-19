@@ -4,6 +4,10 @@ const footerLinks = [
     link: '/faq',
   },
   {
+    label: 'Sitemap',
+    link: '/links',
+  },
+  {
     label: 'Terms of Use',
     link: '/terms-of-use',
   },
